@@ -315,7 +315,7 @@ class CheatslistMenu:
             elif c == curses.KEY_DOWN:
                 # Move DOWN
                 self.move_position(1)
-            elif c == curses.KEY_BACKSPACE or c == 127:
+            elif c == curses.KEY_BACKSPACE or c == 8:
                 if self.check_move_cursor(-1):
                     i = self.xcursor - self.x_init - 1
                     self.input_buffer = self.input_buffer[:i] + self.input_buffer[i+1:]
@@ -613,7 +613,7 @@ class ArgslistMenu:
                 self.previous_arg()
             elif c == 9:
                 self.next_arg()
-            elif c == curses.KEY_BACKSPACE or c == 127:
+            elif c == curses.KEY_BACKSPACE or c == 8:
                 if self.check_move_cursor(-1):
                     i = self.xcursor - self.x_init - 1
                     Gui.cmd.args[self.current_arg][1] = Gui.cmd.args[self.current_arg][1][:i] + Gui.cmd.args[self.current_arg][1][i+1:]
